@@ -5,16 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa's Workshop</title>
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/client.js"></script>
 </head>
 <body>
     <header>
         <h1>Santa's Workshop</h1>
     </header>
     <main>
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Does Santa need to add another child to his list?</legend>
+                    <label for="nameInput">Name:</label>
+                    <input id="nameInput" placeholder="Name">
+                    <label for="giftInput">Gift:</label>
+                    <input id="giftInput" placeholder="Gift">
+                    <label for="notesInput">Notes:</label>
+                    <input id="notesInput" placeholder="Notes">
+                    <input type="radio" id="niceInput" name="naughty_or_nice" value="true">
+                    <label for="niceInput">Nice</label>
+                    <input type="radio" id="naughtyInput" name="naughty_or_nice" value="false">
+                    <label for="naughtyInput">Naughty</label>
+                    <button>Submit</button>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gift</th>
+                        <th>Notes</th>
+                        <th>Nice/Naughty</th>
+                    </tr>
+                </thead>
+                <tbody id="childrenTable">
+                </tbody>
+                <tfoot>
 
+                </tfoot>
+            </table>
+        </section>
     </main>
     <footer>
-        
+
     </footer>
 </body>
 </html>
