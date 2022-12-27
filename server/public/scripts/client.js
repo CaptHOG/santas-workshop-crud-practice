@@ -3,6 +3,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('DOM ready');
     getAndRenderChildren();
+    $('#submitChildButton').on('click', addChild);
 }
 
 
@@ -45,6 +46,33 @@ function getAndRenderChildren() {
 }
 
 // POST(create) to /children
+function addChild() {
+    console.log('child added:');
+
+    let newName = $('#nameInput').val();
+    let newGift = $('#giftInput').val();
+    let newNaughtyOrNice = $('.radioInput').val();
+    let newNotes = $('#notesInput').val();
+
+    let childToSend = {
+        name: newName,
+        gift: newGift,
+        naughty_or_nice: newNaughtyOrNice,
+        notes: newNotes
+    };
+    // ajax call to server to POST(create)
+    $.ajax({
+        method: 'POST',
+        url: '/children',
+        data: childToSend
+    }).then((response) => {
+        console.log('POST client response', response);
+        // bring DOM back in sync after sending childToSend object
+        getAndRenderChildren();
+    }).catch((error) => {
+        console.log('error POST client!', error);
+    })
+}
 
 // DELETE(delete) from /children
 

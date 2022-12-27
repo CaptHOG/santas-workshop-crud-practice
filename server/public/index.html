@@ -14,7 +14,7 @@
     </header>
     <main>
         <section>
-            <form>
+            <form id="childForm">
                 <fieldset>
                     <legend>Does Santa need to add another child to his list?</legend>
                     <label for="nameInput">Name:</label>
@@ -23,11 +23,11 @@
                     <input id="giftInput" placeholder="Gift">
                     <label for="notesInput">Notes:</label>
                     <input id="notesInput" placeholder="Notes">
-                    <input type="radio" id="niceInput" name="naughty_or_nice" value="true">
+                    <input type="radio" class="radioInput" id="niceInput" name="naughty_or_nice" value="true">
                     <label for="niceInput">Nice</label>
-                    <input type="radio" id="naughtyInput" name="naughty_or_nice" value="false">
+                    <input type="radio" class="radioInput" id="naughtyInput" name="naughty_or_nice" value="false">
                     <label for="naughtyInput">Naughty</label>
-                    <button>Submit</button>
+                    <button id="submitChildButton">Submit</button>
                 </fieldset>
             </form>
         </section>
